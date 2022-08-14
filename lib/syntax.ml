@@ -6,6 +6,7 @@ type expr =
   | Let of (string * expr * expr)
   | Bop of bop
   | Uop of uop
+[@@deriving show]
 
 and bop =
   | Plus of (expr * expr)

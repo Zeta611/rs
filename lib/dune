@@ -1,5 +1,6 @@
 (library
- (name rs))
+ (name rs)
+ (preprocess (pps ppx_deriving.show)))
 
 (ocamllex lexer)
 (menhir

@@ -20,8 +20,6 @@ rule token = parse
     { token lexbuf }
 | eof
     { EOF }
-| var as x
-    { VAR x }
 | number as n
     { NUM (int_of_string n) }
 | '+'
@@ -46,5 +44,7 @@ rule token = parse
     { EQ }
 | "in"
     { IN }
+| var as x
+    { VAR x }
 | _
     { raise (LexError (Printf.sprintf "At offset %d: unexpected character.\n" (Lexing.lexeme_start lexbuf))) }
